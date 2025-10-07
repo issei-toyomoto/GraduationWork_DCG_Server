@@ -11,19 +11,21 @@ class TCP_Module
 {
 private:
 	WSADATA wsaData;
-	struct sockaddr_in server;
+	SOCKET sock0;
+	struct sockaddr_in addr;
+	struct sockaddr_in client;
 	SOCKET sock;
+
 public:
 	/**
 	 * @fn
 	 * Winsock_Init
 	 * @brief winsockの初期化
-	 * @param (port) ポート番号をここに入れる
-	 * @param (addr) アドレスをString型で入れる
+	 * @param (port) ソケットにするポート番号をここに入れる
 	 * @return winsockの初期化が成功したか、成功した場合はTureが返される
 	 * @detail winsockの初期化、ソケットの作成、IPアドレスのバイナリ変換をこの関数で行う
 	*/
-	bool Winsock_Init(int port, String addr);
+	bool Winsock_Init(int port);
 	/**
 	 * @fn
 	 * Winsock_End
@@ -31,29 +33,14 @@ public:
 	 * @detail winsockの終了処理
 	*/
 	void Winsock_End(void);
+
 	/**
-	 * @fn
-	 * ConnectServer
-	 * @brief サーバに接続
-	 * @return サーバに接続成功した場合は0、失敗した場合は-1
-	 * @detail winsockを初期化時に設定したポートとIPからサーバに接続する
+	* @fn
+	* ClientHandler
+	* @brief クライアントからデータを取得する
+	* @return 受け取った値を返す
+	* @Clientの
 	*/
-	int ConnectServer(void);
-	/**
-	 * @fn
-	 * getData
-	 * @brief サーバからデータを取得する
-	 * @return サーバからのString型のデータ
-	 * @detail サーバからのデータをString型でデータを返す
-	*/
-	std::string getData(void);
-	/**
-	 * @fn
-	 * sendData
-	 * @brief サーバへデータを送信する
-	 * @param (sd) サーバへ送信したいデータ（String型）
-	 * @detail サーバへchar型でデータを送信する
-	*/
-	void sendData(std::string sd);
+	String ClientHandler(SOCKET clientSocket);
 };
 

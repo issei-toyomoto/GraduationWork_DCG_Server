@@ -1,6 +1,6 @@
-﻿# include <Siv3D.hpp> // Siv3D v0.6.16
+﻿#include "system/TCP/TCP_Module.h"
 
 void Main()
 {
-	
+	TCP_Module tcp;
 }
