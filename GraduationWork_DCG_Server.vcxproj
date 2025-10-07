@@ -115,6 +115,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\system\JSON\JSONModule.cpp" />
     <ClCompile Include="source\Main.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -326,6 +327,7 @@
     <Xml Include="App\example\xml\test.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\system\JSON\JSONModule.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="source\system\TCP\TCP_Module.h" />
   </ItemGroup>

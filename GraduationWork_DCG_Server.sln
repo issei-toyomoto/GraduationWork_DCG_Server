@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36310.24 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraduationWork_DCG_LoginServer", "GraduationWork_DCG_Server.vcxproj", "{B7816896-3659-49A0-A684-B255C0BAC834}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraduationWork_DCG_Server", "GraduationWork_DCG_Server.vcxproj", "{B7816896-3659-49A0-A684-B255C0BAC834}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
