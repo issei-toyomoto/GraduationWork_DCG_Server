@@ -11,10 +11,10 @@ class TCP_Module
 {
 private:
 	WSADATA wsaData;
-	SOCKET sock0;
-	struct sockaddr_in addr;
-	struct sockaddr_in client;
-	SOCKET sock;
+	SOCKET serverSocket, clientSocket;
+	struct sockaddr_in serverAddr;
+	sockaddr_in clientAddr;
+	int clientAddrLen = sizeof(clientAddr);
 
 public:
 	/**
@@ -36,11 +36,30 @@ public:
 
 	/**
 	* @fn
-	* ClientHandler
-	* @brief クライアントからデータを取得する
-	* @return 受け取った値を返す
-	* @Clientの
+	* AcceptConnection
+	* @brief クライアントからの接続を受け入れる
+	* @return クライアントから受け取ったデータを返す
+	* 
 	*/
-	String ClientHandler(SOCKET clientSocket);
+	String AcceptConnection();
+
+	/**
+	* @fn
+	* GetData
+	* @brief クライアントからデータを受け取る
+	* @para クライアントのソケット
+	* @return クライアントから受け取ったデータを返す
+	*
+	*/
+	String GetData(SOCKET clientSocket);
+
+	/**
+	* @fn
+	*
+	* @brief
+	* @return
+	*
+	*/
+	//String SendData();
 };
 
