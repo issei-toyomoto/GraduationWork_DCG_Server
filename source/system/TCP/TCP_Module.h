@@ -60,6 +60,6 @@ public:
 	* @return
 	*
 	*/
-	//String SendData();
+	void SendData(String sd);
 };
 
