@@ -122,7 +122,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="source\system\TCP\TCP_Module.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\engine\texture\box-shadow\128.png" />
@@ -332,7 +331,6 @@
     <ClInclude Include="source\Login\Login.h" />
     <ClInclude Include="source\system\JSON\JSONModule.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="source\system\TCP\TCP_Module.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App\example\obj\blacksmith.obj">

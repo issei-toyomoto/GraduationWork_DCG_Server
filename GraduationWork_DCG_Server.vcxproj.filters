@@ -144,9 +144,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\system\TCP\TCP_Module.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\system\JSON\JSONModule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -817,9 +814,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="source\system\TCP\TCP_Module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\system\JSON\JSONModule.h">
