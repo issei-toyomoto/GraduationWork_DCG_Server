@@ -25,6 +25,7 @@ void Main()
 
 		// 受け取ったデータをJSON形式に変換
 		JSON json = JSON::Parse(getData);
+		Print << json.format();
 
 		//受信したデータからどの関数、メソッドで処理するか判定する
 		String method = json[U"method"].getString();//methodの値をString型に変換
