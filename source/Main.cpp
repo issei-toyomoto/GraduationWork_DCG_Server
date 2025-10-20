@@ -1,7 +1,6 @@
 ﻿#include <Siv3d.hpp>
-#include "system/TCP/TCP_Module.h"
-
-#define PORT 12345
+#include "system/TCP/ServerModule.h"//通信
+#include "Login/Login.h"
 
 void Main()
 {
@@ -12,30 +11,38 @@ void Main()
 	// フォントをあらかじめ作成（毎フレーム作らない）
 	Font font(20);
 
-	TCP_Module tcp;
+	//データを受け取る変数
+	JSON json;
+	//通信用のインスタンス作成
+	ServerModule tcp;
+	//
+	Login login;
 
-	//winsockの初期化
-	tcp.Winsock_Init(PORT);
-	
+
+	//サーバを開放
+	tcp.serverStartAccept();
 
 	while (System::Update())
 	{
-		//クライアントからのデータを受信
-		String getData = tcp.AcceptConnection();
-
-		// 受け取ったデータをJSON形式に変換
-		JSON json = JSON::Parse(getData);
-		Print << json.format();
-
-		//受信したデータからどの関数、メソッドで処理するか判定する
-		String method = json[U"method"].getString();//methodの値をString型に変換
-
-		if (method == U"Login") {//ログイン処理
-			Print << U"Login処理を開始";
+		//データ受信処理
+		if (tcp.serverHasSession() && tcp.serverIsConnected()) {
+			json = tcp.serverReadJSON();//クライアントからデータを受け取る
 		}
-		else if (method == U"") {
+
+		//jsonデータからどの処理を実行するか判定
+		if (tcp.serverHasSession() && tcp.serverIsConnected() && json.hasElement(U"method")) {
+			Print << U"メソッド判定開始...";
+			String method = json[U"method"].get<String>();
+
+			if (method == U"Login") {//ログイン処理
+				Print << U"Login処理を開始";
+				Print << login.CreateLoginID(json);
+			}
+			else if (method == U"") {
+			}
+			else {
+				Print << U"メソッドがありません";
+			}
 		}
 	}
-	//winsockの終了処理
-	tcp.Winsock_End();
 }

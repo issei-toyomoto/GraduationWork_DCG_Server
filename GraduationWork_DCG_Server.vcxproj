@@ -118,7 +118,7 @@
     <ClCompile Include="source\Login\Login.cpp" />
     <ClCompile Include="source\system\JSON\JSONModule.cpp" />
     <ClCompile Include="source\Main.cpp" />
-    <ClCompile Include="source\system\TCP\TCP_Module.cpp" />
+    <ClCompile Include="source\system\TCP\ServerModule.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
@@ -331,7 +331,7 @@
   <ItemGroup>
     <ClInclude Include="source\Login\Login.h" />
     <ClInclude Include="source\system\JSON\JSONModule.h" />
-    <ClInclude Include="source\system\TCP\TCP_Module.h" />
+    <ClInclude Include="source\system\TCP\ServerModule.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
