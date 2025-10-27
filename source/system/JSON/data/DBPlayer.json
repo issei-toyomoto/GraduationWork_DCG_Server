@@ -1,12 +1,12 @@
-[
+﻿[
   {
-    "playerID": "user-1",
+    "loginID": null,
     "password": 123,
-    "loginID" :  null
+    "playerID": "user-1"
   },
   {
-    "playerID": "user-2",
+    "loginID": null,
     "password": 456,
-    "loginID": null
+    "playerID": "user-2"
   }
 ]

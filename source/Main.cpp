@@ -36,7 +36,7 @@ void Main()
 
 			if (method == U"Login") {//ログイン処理
 				Print << U"Login処理を開始";
-				Print << login.CreateLoginID(json);
+				login.CreateLoginID(json);
 			}
 			else if (method == U"") {
 			}
@@ -44,5 +44,8 @@ void Main()
 				Print << U"メソッドがありません";
 			}
 		}
+
+		//クラアントのログアウト処理
+		
 	}
 }

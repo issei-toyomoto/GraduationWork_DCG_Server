@@ -3,6 +3,9 @@
 
 class JSONModule
 {
+private:
 
+public:
+	bool JSONArrayInputData(auto inputdata, JSON targetKey);
 };
 
